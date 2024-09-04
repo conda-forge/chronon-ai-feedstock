@@ -12,7 +12,7 @@ source:
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
   script_env:
     - CHRONON_VERSION_STR={{ version }}
 
@@ -24,7 +24,7 @@ requirements:
   run:
     - python >=3.7
     - click
-    - thrift <0.14
+    - thrift
 
 test:
   imports:
@@ -46,3 +46,4 @@ extra:
     - nikhilsimha
     - pengyu-hou
     - hzding621
+    - snapbug
