@@ -26,11 +26,10 @@ requirements:
     - click
     - thrift
 
+# Wait for upstream to fix thrift pin before adding pip check
 test:
   imports:
     - ai.chronon
-  commands:
-    - pip check
   requires:
     - pip
 
