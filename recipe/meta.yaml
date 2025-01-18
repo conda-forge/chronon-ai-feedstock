@@ -12,17 +12,17 @@ source:
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
   script_env:
     - CHRONON_VERSION_STR={{ version }}
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - setuptools
     - pip
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - click
     - thrift
 
@@ -32,6 +32,7 @@ test:
     - ai.chronon
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   summary: Chronon python API library
