@@ -1,5 +1,5 @@
 {% set name = "chronon-ai" %}
-{% set version = "0.0.86" %}
+{% set version = "0.0.87" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: eae9cc3052564608503d4edf7cda4935ffd416542df6116b93ad9e3f787626a7
+  sha256: 2bd522c384fbd0478991e6d4c4929198797d4f30be36c915025b220ab6966c3b
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
   script_env:
     - CHRONON_VERSION_STR={{ version }}
 
